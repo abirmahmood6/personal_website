@@ -19,6 +19,27 @@ body {
   padding: 30px;
 }
 
+.aboutMe {
+  display: flex;
+  justify-content: center;   /* centers whole block */
+  align-items: center;       /* vertical alignment */
+  gap: 40px;                 /* space between text and image */
+  max-width: 900px;
+  margin: 0 auto;            /* centers container on page */
+  padding: 20px;
+}
+
+.aboutMe p {
+  flex: 1;                  /* text takes equal space */
+}
+
+.myImage {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .homepage h1 {
   font-size: 3rem;
   font-weight: bold;
