@@ -21,16 +21,16 @@ body {
 
 .aboutMe {
   display: flex;
-  justify-content: center;   /* centers whole block */
-  align-items: center;       /* vertical alignment */
-  gap: 40px;                 /* space between text and image */
+  justify-content: center; /* centers whole block */
+  align-items: center; /* vertical alignment */
+  gap: 40px; /* space between text and image */
   max-width: 900px;
-  margin: 0 auto;            /* centers container on page */
+  margin: 0 auto; /* centers container on page */
   padding: 20px;
 }
 
 .aboutMe p {
-  flex: 1;                  /* text takes equal space */
+  flex: 1; /* text takes equal space */
 }
 
 .myImage {
@@ -52,14 +52,31 @@ body {
 }
 
 .navbar {
+  background-color: #333;
+  color: wheat;
   display: flex;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center;
+  width: 50%;
+  padding: 8px;
+  border-radius: 10px;
 }
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 80px;
+}
+
+.nav-links a {
+  transition: all 0.25s ease;
+  padding: 8px;
+  
+}
+
+.nav-links a:hover {
+  background-color: #e8e8e8;
+  color: #333;
+  border-radius: 20px;
+  transform: translateY(-2px);
 }
 
 /* ── Resume Page ── */
