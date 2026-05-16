@@ -1,19 +1,25 @@
 import React from 'react'
-import Navbar from '../components/Navbar';
 import "../App.css";
 
 const Home = () => {
   return (
-    <div className="homepage">
-      <Navbar />
+    <section className="page-shell">
+      <div className="container">
+        <div className="hero-panel">
+          <div className="hero-grid">
+            <div className="hero-copy">
+              <p className="text-orange-600 font-semibold uppercase tracking-[0.24em]">Software Engineering Portfolio</p>
+              <h1 className="section-heading">Hi, I'm Abir</h1>
+              <p className="section-copy">
+                A senior at <span className="text-violet-600 font-semibold">New York University (NYU)</span> studying Computer Science. I'm currently interning at <span className="text-orange-600 font-semibold">Dockware</span> as a Software Engineer, where I build real-world applications, enjoy full-stack development, and turn ideas into clean, functional products. I’m also interested in product management in tech and how engineering connects with product thinking.
+              </p>
+            </div>
 
-      {/* uaw GRID to design the two parts */}
-      <h1>Personal Website</h1>
-      <div className='aboutMe'>
-        <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
-        <img src="myPic.png" alt="Abir Mahmood's Picture" className='myImage' />
+            <img src="myPic.png" alt="Abir Mahmood" className="profile-image" />
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 
