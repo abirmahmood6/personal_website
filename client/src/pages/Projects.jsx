@@ -5,9 +5,9 @@ import projectData from "../data/projects_data";
 const Projects = () => {
   return (
     <section className="page-shell">
-      <div className="container">
-        <div className="text-center mb-12">
-          <p className="text-orange-600 font-semibold uppercase tracking-[0.24em] mb-3">Selected Work</p>
+      <div className="container space-y-12">
+        <div className="text-center">
+          <p className="eyebrow">Selected work</p>
           <h1 className="section-heading">Projects</h1>
           <p className="section-copy">
             A curated collection of recent projects demonstrating clean engineering, product-driven design, and practical full-stack impact.
@@ -16,9 +16,7 @@ const Projects = () => {
 
         <div className="project-grid">
           {projectData.map((item) => (
-            <div key={item.id} className="project-card-shell">
-              <ProjectCard project={item} />
-            </div>
+            <ProjectCard key={item.id} project={item} />
           ))}
         </div>
       </div>
