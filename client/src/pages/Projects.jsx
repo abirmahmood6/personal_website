@@ -1,23 +1,24 @@
-import React from 'react';
-import ProjectCard from '../components/ProjectCard';
-import projectData from '../data/projects_data';
-import Navbar from '../components/Navbar';
+import React from "react";
+import ProjectCard from "../components/ProjectCard";
+import projectData from "../data/projects_data";
 
 const Projects = () => {
   return (
-    <div className='homepage'>
-      <Navbar/>
-      <h1> Projects Page </h1>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-      {projectData.map((item, index)=>
-      <ProjectCard
-      project={item}
-      />
-      )}
+    <section className="page-shell">
+      <div className="container space-y-12">
+        <div className="text-center">
+          <p className="eyebrow">Selected work</p>
+          <h1 className="section-heading">Projects</h1>
+        </div>
+
+        <div className="project-grid">
+          {projectData.map((item) => (
+            <ProjectCard key={item.id} project={item} />
+          ))}
+        </div>
       </div>
+    </section>
+  );
+};
 
-    </div>
-  )
-}
-
-export default Projects
+export default Projects;
