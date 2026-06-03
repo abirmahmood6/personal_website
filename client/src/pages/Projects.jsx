@@ -9,9 +9,6 @@ const Projects = () => {
         <div className="text-center">
           <p className="eyebrow">Selected work</p>
           <h1 className="section-heading">Projects</h1>
-          <p className="section-copy">
-            A curated collection of recent projects demonstrating clean engineering, product-driven design, and practical full-stack impact.
-          </p>
         </div>
 
         <div className="project-grid">

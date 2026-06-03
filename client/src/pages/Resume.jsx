@@ -18,12 +18,12 @@ const Resume = () => {
               <span className="resume-card-title">Resume</span>
               <div className="resume-card-actions">
                 <button className="resume-btn outline" onClick={() => window.print()}>Print</button>
-                <a className="resume-btn filled" href="/Resume__Abir_Mahmood.pdf" download>Download</a>
+                <a className="resume-btn filled" href="/Resume___Abir_Mahmood.pdf" download>Download</a>
               </div>
             </div>
             <div className="resume-preview">
               <iframe
-                src="/Resume__Abir_Mahmood.pdf"
+                src="/Resume___Abir_Mahmood.pdf"
                 title="Resume"
                 className="resume-iframe"
               />
