@@ -1,5 +1,12 @@
 const projects = [
   {
+    id: 0,
+    title: "GitHub Profile",
+    isProfile: true,
+    github: "https://github.com/abirmahmood6",
+    accent: "#24292e",
+  },
+  {
     id: 1,
     title: "NYU Match App",
     description:

@@ -14,6 +14,12 @@ const certifications = [
     image: "/cert-cornell.png",
     description: "An introduction to how AI and machine learning fit into real software — covering model design, data pipelines, and practical engineering tradeoffs.",
   },
+  {
+    title: "Phi Theta Kappa Honor Society",
+    organization: "Phi Theta Kappa — Alpha Kappa Chapter",
+    image: "/cert-ptk.png",
+    description: "Inducted into the Phi Theta Kappa Honor Society in recognition of academic excellence. PTK is the largest honor society in American higher education.",
+  },
 ]
 
 const experience = [
