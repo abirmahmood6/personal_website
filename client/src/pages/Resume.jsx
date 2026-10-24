@@ -4,8 +4,8 @@ const Resume = () => {
   return (
     <section className="page-shell resume-page">
       <div className="container">
-        <div className="text-center mb-10">
-          <p className="text-orange-600 font-semibold uppercase tracking-[0.24em] mb-3">Resume</p>
+        <div className="resume-intro">
+          <p className="eyebrow">Resume</p>
           <h1 className="section-heading">Professional Experience</h1>
           <p className="section-copy">
             Download the resume below or preview the printable version for a clean, structured overview of my software engineering background.

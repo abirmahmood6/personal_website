@@ -27,37 +27,33 @@ const experience = [
     role: "Software Engineer Intern",
     company: "Dockware",
     logo: "/logos/dockware.png",
-    duration: "Summer 2026",
+    duration: "Summer – Fall 2026",
     dateRange: "May 2026 – Present",
     location: "Tulsa, OK · On-site",
     color: "#f97316",
-    colorLight: "rgba(249, 115, 22, 0.1)",
-    colorBg: "rgba(249, 115, 22, 0.04)",
-    description: "Building customer-facing dashboards and mobile scan applications for warehouse robotics systems, mentored by SpaceX engineers. Contributing full-stack across real-time fleet monitoring, data visualization, and CV deployment tooling.",
+    description: "Migrating browser tests to Playwright (cutting CI from ~45 to ~8 minutes), improving vision mission review reliability, and shipping full-stack features for an internal ops platform that plans and ships computer-vision hardware installs.",
     responsibilities: [
-      "Building customer-facing dashboards and mobile scan applications for warehouse robotics systems, mentored by SpaceX engineers.",
-      "Developing full-stack features across the client-facing product suite, including real-time data visualization and fleet monitoring interfaces.",
-      "Designing and implementing configuration management tooling to support scalable deployment of computer vision systems across robot fleets.",
+      "Migrated a customer-facing web app's browser tests from Cypress to Playwright across auth, shipments, admin, and compliance flows (12+ PRs), cutting CI from ~45 minutes originally to ~8 minutes per PR and removing Cypress from the stack.",
+      "Improved reliability of vision mission review by fixing cloud image loading (API payload first, object storage fallback), adding shareable tags/notes/filters for debugging missions, and hardening a Gemini vision-label pipeline to detect gibberish OCR fields, retry once, and keep valid fields so bad model output doesn't corrupt production data.",
+      "Shipped full-stack features for an internal ops platform used to plan and ship computer-vision hardware installs (React, TypeScript, Hono, PostgreSQL, S3)—including shipment/manufacture tracking, packing lists, readiness checklists, interactive timelines, and multi-file document uploads with audit logging.",
     ],
-    technologies: ["React", "Node.js", "Express", "PostgreSQL"],
+    technologies: ["React", "TypeScript", "Hono", "PostgreSQL", "Playwright", "S3"],
   },
   {
-    role: "Data & Workflow Automation Intern",
+    role: "AI & Data Automation Intern",
     company: "TCC Skills Lab",
     logo: "/logos/tcc-skills-lab.png",
     duration: "Spring 2026",
-    dateRange: "Jan 2026 – May 2026",
+    dateRange: "Jan 2026 – Apr 2026",
     location: "Tulsa, OK · On-site",
     color: "#0d9488",
-    colorLight: "rgba(13, 148, 136, 0.1)",
-    colorBg: "rgba(13, 148, 136, 0.04)",
-    description: "Automated learner data workflows and shipped a real-time analytics dashboard for 300+ learners, replacing manual weekly status meetings with self-serve insights and saving ~4 hours of manual reporting per week.",
+    description: "Built and deployed a full-stack analytics dashboard for 100+ workforce learners, engineered a Coursera data pipeline that collapsed a 6-step CSV process into one upload, and cut ~4 hours/week of manual data entry via Airtable automation.",
     responsibilities: [
-      "Built a Google Apps Script pipeline to automatically categorize Coursera learner data into dynamic views (active, inactive, at-risk), eliminating ~4 hours of manual work per week.",
-      "Built a React + Tailwind CSS dashboard integrating the Airtable API to replace manual weekly status meetings with a real-time self-serve learner analytics dashboard.",
-      "Processed, cleaned, and validated 300+ learner records, resolving duplicates and missing values to improve data integrity across reporting workflows.",
+      "Built and deployed a full-stack internal analytics dashboard (React, Vite, Tailwind CSS, Vercel) for a 4-person team tracking 100+ workforce learners—replacing spreadsheet workflows and weekly status meetings with a real-time, self-serve view of KPIs (completions, hires, at-risk flags).",
+      "Engineered a Google Apps Script pipeline that merges 3 Coursera CSV exports, deduplicates learners by email, classifies engagement status, and serves live data to the React app via a JSON API—cutting a 6-step manual CSV process down to a single file upload with scheduled triggers and regex-based file detection.",
+      "Integrated the Airtable API and auto-categorized learners into active/inactive/at-risk views, eliminating ~4 hours/week of manual data entry after validating 300+ learner records for reporting integrity.",
     ],
-    technologies: ["React", "Tailwind CSS", "Airtable API", "Google Apps Script"],
+    technologies: ["React", "Vite", "Tailwind CSS", "Vercel", "Airtable API", "Google Apps Script"],
   },
   {
     role: "Software Engineer Intern",
@@ -67,8 +63,6 @@ const experience = [
     dateRange: "Jul 2023 – Sep 2023",
     location: "Remote",
     color: "#2563eb",
-    colorLight: "rgba(37, 99, 235, 0.1)",
-    colorBg: "rgba(37, 99, 235, 0.04)",
     description: "Engineered a mentor-student matchmaking algorithm that increased successful matches by 62%, and built a full admin dashboard from scratch with D3.js visualizations across 50+ mentoring sessions.",
     responsibilities: [
       "Implemented a mentor-student matchmaking algorithm using React and TypeScript, increasing successful matches by 62%.",
@@ -129,17 +123,18 @@ const Home = () => {
               <article
                 key={`${item.role}-${item.company}`}
                 className="exp-card"
+                style={{ '--card-accent': item.color }}
                 onClick={() => openModal({ type: 'experience', data: item })}
                 onKeyDown={(e) => e.key === 'Enter' && openModal({ type: 'experience', data: item })}
                 tabIndex={0}
                 role="button"
               >
-                <div className="exp-card-stripe" style={{ background: item.color }} />
-                <div className="exp-card-content" style={{ background: item.colorBg }}>
+                <div className="exp-card-stripe" />
+                <div className="exp-card-content">
                   {/* Header: company + role (left) | logo (right) */}
                   <div className="exp-card-header">
                     <div className="exp-card-header-left">
-                      <p className="exp-company-name" style={{ color: item.color }}>{item.company}</p>
+                      <p className="exp-company-name">{item.company}</p>
                       <h3 className="exp-role">{item.role}</h3>
                     </div>
                     {item.logo && (
@@ -222,7 +217,7 @@ const Home = () => {
               <button className="modal-close" onClick={closeModal} aria-label="Close modal">×</button>
             </div>
             <div className="modal-content">
-              <p className="text-slate-700 mb-4">{activeModal.data.description}</p>
+              <p className="modal-body-text mb-4">{activeModal.data.description}</p>
 
               {activeModal.data.responsibilities && (
                 <div className="modal-section">
@@ -236,7 +231,7 @@ const Home = () => {
               {activeModal.data.location && (
                 <div className="modal-section">
                   <h4 className="modal-section-title">Location</h4>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{activeModal.data.location}</p>
+                  <p className="modal-body-text">{activeModal.data.location}</p>
                 </div>
               )}
 

@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects"
@@ -9,10 +10,10 @@ import Contact from "./pages/Contact"
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen app-shell">
       <Navbar />
 
-      <main>
+      <main className="app-main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
@@ -20,6 +21,8 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+
+      <Footer />
     </div>
   );
 };
