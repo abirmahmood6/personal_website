@@ -222,7 +222,7 @@ const Home = () => {
               <button className="modal-close" onClick={closeModal} aria-label="Close modal">×</button>
             </div>
             <div className="modal-content">
-              <p className="text-slate-700 mb-4">{activeModal.data.description}</p>
+              <p className="text-muted mb-4">{activeModal.data.description}</p>
 
               {activeModal.data.responsibilities && (
                 <div className="modal-section">

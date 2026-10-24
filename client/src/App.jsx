@@ -9,7 +9,7 @@ import Contact from "./pages/Contact"
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen app-shell">
       <Navbar />
 
       <main>
