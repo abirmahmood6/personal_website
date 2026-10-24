@@ -15,12 +15,12 @@ const ProjectCard = ({ project = {} }) => {
         href={github}
         target="_blank"
         rel="noopener noreferrer"
-        className="project-card project-card--profile"
+        className="project-card project-card--profile project-card--github"
         aria-label="GitHub Profile"
       >
-        <div className="project-card-stripe" style={{ background: accent }} />
+        <div className="project-card-stripe" style={{ background: 'var(--card-accent)' }} />
         <div className="project-card-body project-profile-body">
-          <div className="project-profile-icon" style={{ color: accent }}>
+          <div className="project-profile-icon" style={{ color: 'var(--card-accent)' }}>
             <GitHubIcon />
           </div>
           <h3 className="project-title">GitHub Profile</h3>

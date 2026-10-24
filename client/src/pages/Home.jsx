@@ -31,8 +31,6 @@ const experience = [
     dateRange: "May 2026 – Present",
     location: "Tulsa, OK · On-site",
     color: "#f97316",
-    colorLight: "rgba(249, 115, 22, 0.1)",
-    colorBg: "rgba(249, 115, 22, 0.04)",
     description: "Building customer-facing dashboards and mobile scan applications for warehouse robotics systems, mentored by SpaceX engineers. Contributing full-stack across real-time fleet monitoring, data visualization, and CV deployment tooling.",
     responsibilities: [
       "Building customer-facing dashboards and mobile scan applications for warehouse robotics systems, mentored by SpaceX engineers.",
@@ -49,8 +47,6 @@ const experience = [
     dateRange: "Jan 2026 – May 2026",
     location: "Tulsa, OK · On-site",
     color: "#0d9488",
-    colorLight: "rgba(13, 148, 136, 0.1)",
-    colorBg: "rgba(13, 148, 136, 0.04)",
     description: "Automated learner data workflows and shipped a real-time analytics dashboard for 300+ learners, replacing manual weekly status meetings with self-serve insights and saving ~4 hours of manual reporting per week.",
     responsibilities: [
       "Built a Google Apps Script pipeline to automatically categorize Coursera learner data into dynamic views (active, inactive, at-risk), eliminating ~4 hours of manual work per week.",
@@ -67,8 +63,6 @@ const experience = [
     dateRange: "Jul 2023 – Sep 2023",
     location: "Remote",
     color: "#2563eb",
-    colorLight: "rgba(37, 99, 235, 0.1)",
-    colorBg: "rgba(37, 99, 235, 0.04)",
     description: "Engineered a mentor-student matchmaking algorithm that increased successful matches by 62%, and built a full admin dashboard from scratch with D3.js visualizations across 50+ mentoring sessions.",
     responsibilities: [
       "Implemented a mentor-student matchmaking algorithm using React and TypeScript, increasing successful matches by 62%.",
@@ -129,17 +123,18 @@ const Home = () => {
               <article
                 key={`${item.role}-${item.company}`}
                 className="exp-card"
+                style={{ '--card-accent': item.color }}
                 onClick={() => openModal({ type: 'experience', data: item })}
                 onKeyDown={(e) => e.key === 'Enter' && openModal({ type: 'experience', data: item })}
                 tabIndex={0}
                 role="button"
               >
-                <div className="exp-card-stripe" style={{ background: item.color }} />
-                <div className="exp-card-content" style={{ background: item.colorBg }}>
+                <div className="exp-card-stripe" />
+                <div className="exp-card-content">
                   {/* Header: company + role (left) | logo (right) */}
                   <div className="exp-card-header">
                     <div className="exp-card-header-left">
-                      <p className="exp-company-name" style={{ color: item.color }}>{item.company}</p>
+                      <p className="exp-company-name">{item.company}</p>
                       <h3 className="exp-role">{item.role}</h3>
                     </div>
                     {item.logo && (
@@ -222,7 +217,7 @@ const Home = () => {
               <button className="modal-close" onClick={closeModal} aria-label="Close modal">×</button>
             </div>
             <div className="modal-content">
-              <p className="text-muted mb-4">{activeModal.data.description}</p>
+              <p className="modal-body-text mb-4">{activeModal.data.description}</p>
 
               {activeModal.data.responsibilities && (
                 <div className="modal-section">
@@ -236,7 +231,7 @@ const Home = () => {
               {activeModal.data.location && (
                 <div className="modal-section">
                   <h4 className="modal-section-title">Location</h4>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{activeModal.data.location}</p>
+                  <p className="modal-body-text">{activeModal.data.location}</p>
                 </div>
               )}
 
