@@ -110,10 +110,12 @@ img {
 }
 
 .navbar-nav {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem 0;
+  min-height: 3.5rem;
 }
 
 .navbar-list {
@@ -123,6 +125,36 @@ img {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--text-primary);
+  background: var(--hover-fill);
+  border-color: var(--border-strong);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent-violet);
+  outline-offset: 2px;
 }
 
 .navbar-link {
@@ -588,6 +620,12 @@ img {
   }
   .navbar-list {
     gap: 0;
+    padding-right: 2.75rem;
+  }
+  .theme-toggle {
+    width: 2.15rem;
+    height: 2.15rem;
+    border-radius: 8px;
   }
 
   /* Experience cards */
