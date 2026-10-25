@@ -1648,6 +1648,70 @@ img {
   margin: 0 auto;
 }
 
+.recommendations-carousel {
+  outline: none;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.recommendations-carousel:active {
+  cursor: grabbing;
+}
+
+.recommendation-card--active {
+  animation: recommendation-fade 220ms ease;
+}
+
+@keyframes recommendation-fade {
+  from {
+    opacity: 0.35;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recommendations-carousel:focus-visible {
+  outline: 2px solid var(--accent-violet);
+  outline-offset: 6px;
+  border-radius: 28px;
+}
+
+.recommendations-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 1.35rem;
+}
+
+.recommendations-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  border: none;
+  border-radius: 9999px;
+  background: var(--border-strong);
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.recommendations-dot--active {
+  width: 1.55rem;
+  background: var(--accent-violet);
+}
+
+.recommendations-dot:hover:not(.recommendations-dot--active) {
+  background: var(--muted);
+}
+
+.recommendations-dot:focus-visible {
+  outline: 2px solid var(--accent-violet);
+  outline-offset: 3px;
+}
+
 .recommendation-card {
   position: relative;
   background: var(--surface);
