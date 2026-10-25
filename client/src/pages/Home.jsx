@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "../App.css"
+import recommendations from '../data/recommendations_data'
 
 const certifications = [
   {
@@ -162,6 +163,41 @@ const Home = () => {
                 </div>
               </article>
             ))}
+          </div>
+        </section>
+
+        {/* Recommendations Section */}
+        <section className="section-block">
+          <div className="section-heading-group">
+            <p className="eyebrow">LinkedIn</p>
+            <h2 className="section-heading">Recommendations</h2>
+            <p className="section-copy">
+              LinkedIn notes from people I&apos;ve worked with.
+            </p>
+          </div>
+
+          <div className="recommendations-shell">
+            <article className="recommendation-card">
+              <a
+                className="recommendation-linkedin"
+                href={recommendations[0].linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${recommendations[0].name} on LinkedIn`}
+              >
+                LinkedIn
+              </a>
+              <p className="recommendation-quote">{recommendations[0].quote}</p>
+              <div className="recommendation-author">
+                <span className="recommendation-avatar" aria-hidden="true">
+                  {recommendations[0].initials}
+                </span>
+                <div className="recommendation-author-text">
+                  <p className="recommendation-name">{recommendations[0].name}</p>
+                  <p className="recommendation-title">{recommendations[0].title}</p>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
 
