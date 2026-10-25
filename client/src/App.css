@@ -1640,3 +1640,209 @@ img {
   color: var(--text-primary);
   transform: translate(2px, -2px);
 }
+
+/* ─── Recommendations ───────────────────────────────────── */
+
+.recommendations-shell {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.recommendations-carousel {
+  outline: none;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.recommendations-carousel:active {
+  cursor: grabbing;
+}
+
+.recommendation-card--active {
+  animation: recommendation-fade 220ms ease;
+}
+
+@keyframes recommendation-fade {
+  from {
+    opacity: 0.35;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recommendations-carousel:focus-visible {
+  outline: 2px solid var(--accent-violet);
+  outline-offset: 6px;
+  border-radius: 28px;
+}
+
+.recommendations-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-top: 1.35rem;
+}
+
+.recommendations-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  border: none;
+  border-radius: 9999px;
+  background: var(--border-strong);
+  cursor: pointer;
+  transition: width 0.2s ease, background 0.2s ease;
+}
+
+.recommendations-dot--active {
+  width: 1.55rem;
+  background: var(--accent-violet);
+}
+
+.recommendations-dot:hover:not(.recommendations-dot--active) {
+  background: var(--muted);
+}
+
+.recommendations-dot:focus-visible {
+  outline: 2px solid var(--accent-violet);
+  outline-offset: 3px;
+}
+
+.recommendation-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  padding: 2rem 2.25rem 1.85rem;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.recommendation-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.recommendation-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.recommendation-mark {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 4.25rem;
+  line-height: 0.7;
+  color: var(--accent-violet);
+  opacity: 0.35;
+  user-select: none;
+  margin-left: -0.1rem;
+}
+
+.recommendation-linkedin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 10px;
+  background: var(--accent-violet-soft);
+  color: var(--accent-violet);
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.recommendation-linkedin:hover {
+  background: color-mix(in srgb, var(--accent-violet) 22%, transparent);
+  color: var(--accent-violet);
+  transform: translateY(-1px);
+}
+
+.recommendation-linkedin:focus-visible {
+  outline: 2px solid var(--accent-violet);
+  outline-offset: 2px;
+}
+
+.recommendation-quote {
+  margin: 0.35rem 0 1.85rem;
+  color: var(--text-primary);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  white-space: pre-line;
+  letter-spacing: 0.005em;
+}
+
+.recommendation-author {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+}
+
+.recommendation-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--accent-violet-soft);
+  color: var(--accent-violet);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.recommendation-author-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.recommendation-name {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.recommendation-title {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 639px) {
+  .recommendation-card {
+    padding: 1.5rem 1.35rem 1.4rem;
+    border-radius: 22px;
+  }
+
+  .recommendation-mark {
+    font-size: 3.4rem;
+  }
+
+  .recommendation-quote {
+    font-size: 0.95rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .recommendation-avatar {
+    width: 2.65rem;
+    height: 2.65rem;
+    font-size: 0.75rem;
+  }
+}

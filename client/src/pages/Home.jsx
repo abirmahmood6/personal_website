@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "../App.css"
+import RecommendationsCarousel from '../components/RecommendationsCarousel'
 
 const certifications = [
   {
@@ -163,6 +164,19 @@ const Home = () => {
               </article>
             ))}
           </div>
+        </section>
+
+        {/* Recommendations Section */}
+        <section className="section-block">
+          <div className="section-heading-group">
+            <p className="eyebrow">LinkedIn</p>
+            <h2 className="section-heading">Recommendations</h2>
+            <p className="section-copy">
+              LinkedIn notes from people I&apos;ve worked with.
+            </p>
+          </div>
+
+          <RecommendationsCarousel />
         </section>
 
         {/* Certifications Section */}
